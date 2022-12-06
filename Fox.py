@@ -1,9 +1,9 @@
 class Fox:
 
-    def __init__(self, name, age, volumeFood):
+    def __init__(self, name, age):
         self.__Name = name
         self.__Age = age
-        self.VolumeFood = volumeFood
+        self.VolumeFood = 15
         self.Type = ["Лиса"]
         self.Biome = ["Тундра"]
         self.Square = 10
