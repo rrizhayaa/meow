@@ -1,9 +1,9 @@
 class Goose:
 
-    def __init__(self, name, age, volumeFood):
+    def __init__(self, name, age):
         self.__Name = name
         self.__Age = age
-        self.VolumeFood = volumeFood
+        self.VolumeFood = 15
         self.Type = ["Гусь"]
         self.Biome = ["Луг"]
         self.Square = 10
