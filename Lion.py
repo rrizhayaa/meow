@@ -1,9 +1,9 @@
 class Lion:
 
-    def __init__(self, name, age, volumeFood):
+    def __init__(self, name, age):
         self.__Name = name
         self.__Age = age
-        self.VolumeFood = volumeFood
+        self.VolumeFood = 25
         self.Type = ["Лев"]
         self.Biome = ["Саванна"]
         self.Square = 25
