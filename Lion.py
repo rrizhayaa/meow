@@ -1,8 +1,8 @@
 class Lion:
 
     def __init__(self, name, age, volumeFood):
-        self.Name = name
-        self.Age = age
+        self.__Name = name
+        self.__Age = age
         self.VolumeFood = volumeFood
         self.Type = ["Лев"]
         self.Biome = ["Саванна"]
@@ -28,3 +28,19 @@ class Lion:
             print(self.Name, ": Я поиграл :З", self.Sound)
         else:
             print(self.Name, ": Я уже наигрался")
+
+    @property
+    def Age(self):
+        return self.__Age
+
+    @Age.setter
+    def Age(self,value):
+        if(value is int) and (value>=0):
+            self.__Age = value
+            print("Теперь мой возраст", self.__Age)
+        else:
+            print("Нельзя ввести такой возраст")
+
+    @property
+    def Name(self):
+        return self.__Name

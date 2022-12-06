@@ -1,8 +1,8 @@
 class Fox:
 
     def __init__(self, name, age, volumeFood):
-        self.Name = name
-        self.Age = age
+        self.__Name = name
+        self.__Age = age
         self.VolumeFood = volumeFood
         self.Type = ["Лиса"]
         self.Biome = ["Тундра"]
@@ -37,6 +37,7 @@ class Fox:
     def Age(self,value):
         if(value is int) and (value>=0):
             self.__Age = value
+            print("Теперь мой возраст", self.__Age)
         else:
             print("Нельзя ввести такой возраст")
 
