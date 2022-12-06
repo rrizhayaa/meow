@@ -1,46 +1,47 @@
 class Lion:
 
     def __init__(self, name, age):
-        self.__Name = name
-        self.__Age = age
-        self.VolumeFood = 25
-        self.Type = ["Лев"]
-        self.Biome = ["Саванна"]
-        self.Square = 25
-        self.FoodTypes = ["Рыба", "Мясо"]
-        self.Sign = ["Хищник"]
-        self.Sound = ["Ррр"]
-        self.Happiness = 50
+        self.__name = name
+        self.__age = age
+        self.volumeFood = 25
+        self.type = ["Лев"]
+        self.biome = ["Саванна"]
+        self.square = 25
+        self.foodTypes = ["Рыба", "Мясо"]
+        self.sign = ["Хищник"]
+        self.sound = ["Ррр"]
+        self.satiety = 50
+        self.happiness = 50
 
     def DoSound(self, quantity):
         for i in range(quantity):
-            print(self.Name, self.Sound)
+            print(self.name, self.sound)
 
     def Eat(self, foodType):
-        if (foodType in self.FoodTypes):
-            print(self.Name, ": Я покушал", foodType)
+        if (foodType in self.foodTypes):
+            print(self.name, ": Я покушал", foodType)
         else:
-            print(self.Name, ": Я не ем", foodType)
+            print(self.name, ": Я не ем", foodType)
 
     def Play(self):
-        if self.Happiness <= 70:
-            self.Happiness += 30
-            print(self.Name, ": Я поиграл :З", self.Sound)
+        if self.happiness <= 70:
+            self.happiness += 30
+            print(self.name, ": Я поиграл :З", self.sound)
         else:
-            print(self.Name, ": Я уже наигрался")
+            print(self.name, ": Я уже наигрался")
 
     @property
     def Age(self):
-        return self.__Age
+        return self.__age
 
     @Age.setter
     def Age(self,value):
         if(value is int) and (value>=0):
-            self.__Age = value
-            print("Теперь мой возраст", self.__Age)
+            self.__age = value
+            print("Теперь мой возраст", self.__age)
         else:
             print("Нельзя ввести такой возраст")
 
     @property
     def Name(self):
-        return self.__Name
+        return self.__name
