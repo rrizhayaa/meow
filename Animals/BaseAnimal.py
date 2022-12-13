@@ -1,24 +1,34 @@
 class BaseAnimal:
-    def __init__(self, Name, Age, FoodTypes, Biome, Type, VolumeFood, Sigh, Sound):
+    def __init__(self, Name, Age, FoodTypes, Biome, Square, Type, VolumeFood, Sigh, Sound):
         self.__name = Name
         self.__age = Age
         self.__foodTypes = FoodTypes
         self.__type = Type
         self.__biome = Biome
-        self.__square = 15
+        self.__square = Square
+        self.__vegan = isVegan
         self.__volumeFood = VolumeFood
         self.__sigh = Sigh
         self.__sound = Sound
         self.__aviary = 0
         self.__happiness = 50
+        self.__satiety = 50
 
     @property
     def name(self):
         return self.__name
 
     @property
+    def square(self):
+        return self.__square
+
+    @property
     def age(self):
         return self.__age
+
+    @property
+    def isVegan(self):
+        return self.__vegan
 
     @age.setter
     def age(self, value):
@@ -76,6 +86,19 @@ class BaseAnimal:
             self.__happiness = 0
         else:
             self.__happiness = value
+
+    @property
+    def satiety(self):
+        return self.__satiety
+
+    @satiety.setter
+    def satiety(self, value):
+        if self.__satiety > 100:
+            self.__satiety = 100
+        elif self.__satiety < 0:
+            self.__satiety = 0
+        else:
+            self.__satiety = value
 
     def Eat(self, foodType):
         if (foodType in self.__foodTypes):
