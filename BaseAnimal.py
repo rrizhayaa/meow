@@ -8,7 +8,6 @@ class BaseAnimal:
         self.__square = Square
         self.__vegan = isVegan
         self.__volumeFood = VolumeFood
-        self.__sigh = Sigh
         self.__sound = Sound
         self.__aviary = 0
         self.__happiness = 50
@@ -53,10 +52,6 @@ class BaseAnimal:
     @property
     def volumeFood(self):
         return self.__volumeFood
-
-    @property
-    def sigh(self):
-        return self.__sigh
 
     @property
     def aviary(self):
