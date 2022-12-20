@@ -58,7 +58,7 @@ class Aviary:
         self.__square += Animal.square
         print(Animal.name, "больше не находится в вольере", self.__name)
 
-    def doSound(self):
+    def doSound(self, Animal):
         if len(self.__animals)==0:
             print("В вольере", self.__name, "нет животных, чтобы издать звук")
 
@@ -80,5 +80,9 @@ class Aviary:
             self.__food.append([food])
 
     def feedAnimals(self, food, amountOfFood):
-        if (self.__amountOfFood != 0) and (self.__animals[0].food == food):
-            print("Животные в вольере были покормлены этим:", self.__animals, "на", amountOfFood)
+        if self.__amountOfFood >= 100:
+            self.__amountOfFood -= 100
+            print("Животные в вольере были покормлены этим:", food)
+            print("Теперь количество еды составляет:",  amountOfFood
+        elif 
+            
