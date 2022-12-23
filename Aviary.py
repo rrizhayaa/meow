@@ -122,4 +122,3 @@ class Aviary:
             print("Запасов еды вольера недостаточно, чтобы покормить животных")
         elif amountOfFood <= 0:
             print("Ты пытаешься покормить животных ничем")
-hdgkjdghdgjlk
