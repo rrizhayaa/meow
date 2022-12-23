@@ -1,4 +1,4 @@
-from Animals.BaseAnimal import *
+from BaseAnimal import *
 
 class Goose(BaseAnimal):
 
