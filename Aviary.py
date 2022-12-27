@@ -113,12 +113,17 @@ class Aviary:
             print("Не все животные являются одним типом, а именно Мирными")
 
 
-    def feedAnimals(self, amountOfFood):
-        if (self.__amountOfFood >= amountOfFood) and (amountOfFood > 0) and (self.__amountOfFood >0):
-            self.__amountOfFood -= amountOfFood
-            print("Животным в вольер насыпали:", self.__food)
+    def addFood(self, amountOfFood):
+        if (amountOfFood > 0) and (amountOfFood < 200) and (not(self.__amountOfFood + amountOfFood > 200)):
+            self.__amountOfFood += amountOfFood
+            print("Животным в вольер добавили:", self.__food)
             print("Теперь количество запасов еды вольера составляет:",  self.__amountOfFood)
-        elif (self.__amountOfFood < amountOfFood) or (self.__amountOfFood <0):
-            print("Запасов еды вольера недостаточно, чтобы покормить животных")
+        elif (self.__amountOfFood + amountOfFood > 200):
+            print("Столько еды добавить нельзя, кормушка будет переполнена")
         elif amountOfFood <= 0:
-            print("Ты пытаешься покормить животных ничем")
+            print("Ты пытаешься насыпать в кормушку ничего")
+
+    def feedAnimal(self, value):
+        if self.__amountOfFood > 0 and Animal.satiety + value <= Animal.VolumeFood:
+            Animal.satiety += value
+            self.__amountOfFood -= value
