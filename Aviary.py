@@ -123,7 +123,13 @@ class Aviary:
         elif amountOfFood <= 0:
             print("Ты пытаешься насыпать в кормушку ничего")
 
-    def feedAnimal(self, value):
+     def feedAnimals(self, value):
+        for i in self.__animals:
+            i:BaseAnimal
+            if(value>=i.volumeFood):
+                i.Eat(i.foodTypes, i.volumeFood)
+                value -= i.volumeFood
+                   
         if self.__amountOfFood > 0 and Animal.satiety + value <= Animal.VolumeFood:
             Animal.satiety += value
             self.__amountOfFood -= value
