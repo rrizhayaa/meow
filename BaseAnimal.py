@@ -99,23 +99,21 @@ class BaseAnimal:
         variable = value/self.__volumeFood * 100
         if (foodType in self.__foodTypes) and (variable + self.__satiety <= 100):
             self.__satiety += variable
-            print("Я покушал", foodType)
-            print("Теперь моя сытость:", self.__satiety)
+            print(self.__name, ": Я покушал", foodType)
+            print(self.__name, ": Теперь моя сытость:", self.__satiety)
         elif not(foodType in self.__foodTypes):
             print(self.__name, ": Я не ем", foodType)
         elif variable + self.__satiety > 100:
             remainsSatiety = 100 - self.__satiety
             self.__satiety += remainsSatiety
             remainsValue = ((variable - remainsSatiety)/100) * self.__volumeFood
-            print("Я наелся, теперь моя сытость:", self.__satiety)
-            print("Остаток добавленной еды:", remainsValue)
+            print(self.__name, ": Я наелся, теперь моя сытость:", self.__satiety)
+            print("Остаток добавленной еды :", remainsValue)
 
     def Play(self):
         if self.__happiness <= 70:
             self.__happiness += 30
             print(self.__name, ": Я поиграл :З", self.__sound)
-        else:
-            print(self.__name, ": Я уже наигрался")
 
     def DoSound(self, quantity):
         for i in range(quantity):

@@ -1,3 +1,6 @@
+import BaseAnimal
+
+
 class Aviary:
 
     def __init__(self, Name, Biome, Square):
@@ -129,7 +132,3 @@ class Aviary:
             if(value>=i.volumeFood):
                 i.Eat(i.foodTypes, i.volumeFood)
                 value -= i.volumeFood
-                   
-        if self.__amountOfFood > 0 and Animal.satiety + value <= Animal.VolumeFood:
-            Animal.satiety += value
-            self.__amountOfFood -= value
