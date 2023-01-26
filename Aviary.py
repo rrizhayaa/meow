@@ -1,6 +1,5 @@
 import BaseAnimal
 
-
 class Aviary:
 
     def __init__(self, Name, Biome, Square):
